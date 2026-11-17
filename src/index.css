@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --canvas: #000000;
+  --surface-soft: #0d0d0d;
+  --surface-card: #141414;
+  --surface-elevated: #1f1f1f;
+  --hairline: #262626;
+  --hairline-strong: #3a3a3a;
+  --ink: #ffffff;
+  --body: #cccccc;
+  --body-strong: #e6e6e6;
+  --muted: #999999;
+  --muted-soft: #666666;
+  --link: #c3d9f3;
+  --warning: #d4a017;
+  --success: #5fa657;
+  --danger: #cf524c;
+}
+
+@layer base {
+  html {
+    background-color: var(--canvas);
+    color: var(--ink);
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--body);
+    font-family: "Cormorant Garamond", Garamond, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    text-wrap: balance;
+  }
+}
+
+.font-display {
+  font-family: "Saira Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.font-editorial {
+  font-family: "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.font-machined {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Mono", monospace;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Bugatti signature transparent pill CTA */
+.btn-aureon-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 32px;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), opacity 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-aureon-pill:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.btn-aureon-pill:focus-visible {
+  outline: 1px solid var(--link);
+  outline-offset: 3px;
+}
+
+.btn-aureon-pill:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.btn-aureon-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--body-strong);
+  border: 1px solid var(--hairline-strong);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-aureon-secondary:hover:not(:disabled) {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-aureon-secondary:focus-visible {
+  outline: 1px solid var(--link);
+  outline-offset: 3px;
+}
+
+.btn-aureon-secondary:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* Bugatti underline-only input */
+.input-aureon {
+  width: 100%;
+  height: 44px;
+  padding: 12px 0;
+  background: transparent;
+  color: var(--ink);
+  border: none;
+  border-bottom: 1px solid var(--hairline-strong);
+  border-radius: 0;
+  font-family: "Cormorant Garamond", Garamond, serif;
+  font-size: 17px;
+  font-weight: 400;
+  transition: border-color 180ms ease;
+}
+
+.input-aureon::placeholder {
+  color: var(--muted);
+}
+
+.input-aureon:focus {
+  outline: none;
+  border-bottom-color: var(--ink);
+}
+
+/* React Flow austere black overrides */
+.react-flow__controls {
+  background: var(--surface-card) !important;
+  border: 1px solid var(--hairline) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.react-flow__controls-button {
+  background: var(--surface-card) !important;
+  border-bottom: 1px solid var(--hairline) !important;
+  fill: var(--ink) !important;
+  border-radius: 0 !important;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--surface-elevated) !important;
+}
+
+.react-flow__attribution {
+  display: none !important;
+}

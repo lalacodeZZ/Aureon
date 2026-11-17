@@ -1,0 +1,8 @@
+{
+  "name": "AUREON — Payment Webhook Monitoring & Recovery",
+  "description": "AI-assisted Razorpay webhook monitoring, HMAC-SHA256 signature and replay forensics, 3D obsidian webhook topology, and human-approved safe order recovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
